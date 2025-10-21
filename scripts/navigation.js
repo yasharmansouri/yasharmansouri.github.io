@@ -3,7 +3,7 @@
  * Handles mobile menu toggle and dropdown functionality
  */
 
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     // Mobile Menu Toggle
@@ -171,4 +171,4 @@
         });
     }
 
-})();
+});

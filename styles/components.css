@@ -247,6 +247,7 @@
 /* Mobile menu drawer */
 @media (max-width: 767px) {
     .nav-menu {
+        display: flex;
         position: fixed;
         top: 0;
         right: -100%;
@@ -257,7 +258,7 @@
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         border-left: 1px solid var(--border-color);
-        padding: 5rem 1.5rem 2rem;
+        padding: 6.5rem 1.5rem 2rem;
         flex-direction: column;
         align-items: stretch;
         gap: 0.5rem;
