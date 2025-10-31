@@ -550,30 +550,99 @@
 }
 
 .contact-list {
-    list-style: disc;
-    padding-left: 2rem;
+    list-style: none;
+    padding-left: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .contact-list-item {
-    padding: 0.5rem 0;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.contact-list-item strong {
+.contact-list-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .contact-list-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    flex-shrink: 0;
     color: var(--text-primary);
-    margin-right: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Outline icons (email, location) - stroke only, no fill */
+.contact-icon-outline {
+    fill: none !important;
+    stroke: currentColor;
+}
+
+.contact-icon-outline * {
+    fill: none !important;
+    stroke: currentColor;
+}
+
+/* Solid icons (linkedin, github) - fill only, no stroke */
+.contact-icon:not(.contact-icon-outline) {
+    stroke: none;
+    fill: currentColor;
+}
+
+.contact-icon:not(.contact-icon-outline) * {
+    stroke: none;
+    fill: currentColor;
+}
+
+.contact-list-item:hover .contact-icon {
+    color: var(--accent-primary);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.contact-info strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-info span {
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
 .contact-list-link {
-    color: inherit;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
+    font-size: 1rem;
 }
 
 .contact-list-link:hover {
+    color: var(--accent-primary);
     text-decoration: underline;
 }
 
