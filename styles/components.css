@@ -14,7 +14,7 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -42,7 +42,7 @@
 
 /* Light mode navbar styling */
 [data-theme="light"] .glass-nav {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -51,8 +51,8 @@
 [data-theme="light"] .glass-nav::after {
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.6) 0%,
-        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
         rgba(255, 255, 255, 0) 100%
     );
     backdrop-filter: blur(4px);
