@@ -358,6 +358,49 @@ hr {
     margin: 2rem 0;
 }
 
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+table td,
+table th {
+    padding: 0.5rem 0;
+    text-align: left;
+    vertical-align: top;
+    color: var(--text-secondary);
+}
+
+table td:first-child,
+table th:first-child {
+    width: 1%;
+    white-space: nowrap;
+    padding-right: 2rem;
+}
+
+table td:last-child,
+table th:last-child {
+    width: 99%;
+}
+
+table a {
+    color: var(--accent-primary);
+}
+
+table a:hover {
+    opacity: 0.8;
+}
+
+/* Resume contact table bullets */
+.resume-content table td::before {
+    content: "›";
+    color: var(--accent-primary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
 /* ============================================================
    SPACING SCALE
    ============================================================ */
