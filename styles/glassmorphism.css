@@ -146,7 +146,6 @@
 /* No special adjustments needed for minimal design */
 @media (max-width: 768px) {
     .glass-card,
-    .glass-nav,
     .glass-button,
     .glass-panel {
         backdrop-filter: none;
@@ -161,7 +160,6 @@
 /* High contrast mode adjustments */
 @media (prefers-contrast: high) {
     .glass-card,
-    .glass-nav,
     .glass-button,
     .glass-panel {
         border-width: 2px;

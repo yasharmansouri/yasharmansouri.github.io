@@ -7,6 +7,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const element = document.querySelector('.typewriter-text');
+    if (!element) return;
+
     const text = "Hi, I'm Yashar";
     let index = 0;
 
@@ -16,13 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             index++;
             setTimeout(type, 150); // 150ms per character
         } else {
-            // Mark as done (stops cursor blinking)
             element.classList.add('done');
-
-            // Remove cursor completely after 1 second
-            setTimeout(() => {
-                element.style.borderRight = 'none';
-            }, 1000);
         }
     }
 

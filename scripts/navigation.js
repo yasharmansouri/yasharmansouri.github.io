@@ -143,31 +143,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Sticky Navigation
-    let lastScrollTop = 0;
     const nav = document.querySelector('.glass-nav');
 
     if (nav) {
         window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Add shadow when scrolled
-            if (scrollTop > 10) {
+            if (window.scrollY > 10) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
-
-            // Optional: Hide nav on scroll down, show on scroll up
-            // Uncomment if you want this behavior
-            /*
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                nav.classList.add('nav-hidden');
-            } else {
-                nav.classList.remove('nav-hidden');
-            }
-            */
-
-            lastScrollTop = scrollTop;
         });
     }
 

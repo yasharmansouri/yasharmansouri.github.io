@@ -6,42 +6,21 @@
  */
 
 /* ============================================================
-   ROOT - Default Theme (Dark Mode)
+   ROOT - Shared variables
    ============================================================ */
 
 :root {
-    /* Dark mode as default - Pure black with neutral grays */
-    --bg-primary: #000000;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #222222;
-    --text-primary: #ffffff;
-    --text-secondary: #e5e5e5;
-    --text-muted: #cccccc;
-    --accent-primary: #ffffff;
-    --accent-secondary: #e5e5e5;
-    --accent-tertiary: #cccccc;
-    --border-light: rgba(255, 255, 255, 0.1);
-    --border-medium: rgba(255, 255, 255, 0.15);
-    --border-strong: rgba(255, 255, 255, 0.3);
-    --border-color: rgba(255, 255, 255, 0.15);
-
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-
-    /* Smooth transitions for theme switching */
     --transition-theme: 0.3s ease;
 }
 
 /* ============================================================
-   DARK THEME
+   DARK THEME (default)
    ============================================================ */
 
 [data-theme="dark"] {
     --bg-primary: #000000;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #222222;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
     --text-primary: #ffffff;
     --text-secondary: #e5e5e5;
     --text-muted: #cccccc;
@@ -52,8 +31,6 @@
     --border-medium: rgba(255, 255, 255, 0.15);
     --border-strong: rgba(255, 255, 255, 0.3);
     --border-color: rgba(255, 255, 255, 0.15);
-
-    /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -69,7 +46,7 @@
     --bg-tertiary: #e9ecef;
     --text-primary: #1a202c;
     --text-secondary: #4a5568;
-    --text-muted: #718096;
+    --text-muted: #56626e;
     --accent-primary: #1a202c;
     --accent-secondary: #4a5568;
     --accent-tertiary: #718096;
@@ -88,12 +65,14 @@
    THEME TRANSITIONS
    ============================================================ */
 
-/* Apply smooth transitions to elements that use theme colors */
+/* Apply smooth transitions for theme switching on key elements */
 html,
 body,
-*,
-*::before,
-*::after {
+.glass-nav,
+.glass-card,
+.glass-panel,
+.btn,
+.site-footer {
     transition:
         background-color var(--transition-theme),
         color var(--transition-theme),
@@ -113,11 +92,6 @@ html.no-transition *::after {
    ============================================================ */
 
 /* Apply theme colors to base elements */
-html {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-}
-
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
