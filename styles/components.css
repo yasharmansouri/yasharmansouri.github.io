@@ -1113,24 +1113,6 @@
     margin: 0 auto;
 }
 
-.terminal-header {
-    background: var(--border-light);
-    padding: 10px 14px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.terminal-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.terminal-dot.red { background: #ff5f57; }
-.terminal-dot.yellow { background: #febc2e; }
-.terminal-dot.green { background: #28c840; }
-
 .terminal-body {
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(1rem, 2.5vw, 1.3rem);
