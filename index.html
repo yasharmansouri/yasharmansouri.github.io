@@ -42,7 +42,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=block" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/themes.css">
@@ -131,10 +131,22 @@
 
             <!-- Greeting and Tagline -->
             <div class="hero-text">
-                <h1 class="hero-title typewriter-container">
-                    <span class="typewriter-text"></span>
-                </h1>
-                <p class="hero-tagline">I help organizations make better use of their data</p>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">❯</span><span class="terminal-input"><span class="terminal-cursor">▍</span></span>
+                        </div>
+                        <div class="terminal-output">
+                            <div class="terminal-output-line" data-line="0"></div>
+                            <div class="terminal-output-line" data-line="1"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
