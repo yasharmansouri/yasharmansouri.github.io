@@ -1,48 +1,77 @@
 /**
- * Typewriter Animation
+ * Terminal Typewriter Animation
  *
- * Creates a typewriter effect for the hero greeting text
- * with a blinking cursor that disappears when complete.
+ * Types "hello()" as input, shows enter symbol, then prints
+ * output lines one at a time with a typing effect.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    const element = document.querySelector('.typewriter-text');
-    if (!element) return;
+    var inputEl = document.querySelector('.terminal-input');
+    var cursorEl = document.querySelector('.terminal-cursor');
+    var outputLines = document.querySelectorAll('.terminal-output-line');
+    if (!inputEl || !cursorEl) return;
 
-    const text = "Hi, I'm Yashar";
-    let index = 0;
+    var input = 'hello()';
+    var lines = [
+        "Hi, I'm Yashar",
+        'I help organizations make better use of their data'
+    ];
 
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 150); // 150ms per character
-        } else {
-            element.classList.add('done');
-        }
+    // Types text character by character, inserting text nodes before the cursor
+    function typeInto(container, text, speed) {
+        var textNode = document.createTextNode('');
+        container.insertBefore(textNode, cursorEl);
+
+        return new Promise(function(resolve) {
+            var i = 0;
+            function step() {
+                if (i < text.length) {
+                    textNode.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(step, speed + Math.random() * speed * 0.6);
+                } else {
+                    resolve();
+                }
+            }
+            step();
+        });
     }
 
-    // Wait for the Caveat font to load before starting animation
-    async function startTypewriter() {
+    function pause(ms) {
+        return new Promise(function(resolve) { setTimeout(resolve, ms); });
+    }
+
+    async function run() {
+        // Phase 1: Type "hello()" — cursor starts inside .terminal-input
+        await typeInto(inputEl, input, 100);
+
+        await pause(400);
+
+        // Phase 2: Type each output line
+        for (var idx = 0; idx < lines.length; idx++) {
+            var lineEl = outputLines[idx];
+            if (!lineEl) continue;
+
+            lineEl.classList.add('visible');
+            lineEl.appendChild(cursorEl); // moves cursor from previous parent
+            await typeInto(lineEl, lines[idx], 60);
+            await pause(300);
+        }
+
+        // Cursor keeps blinking at the end
+    }
+
+    async function start() {
         try {
-            // Explicitly load and wait for Caveat font
-            await document.fonts.load('700 1em Caveat');
-            // Extra small delay to ensure font is fully rendered
-            await new Promise(resolve => setTimeout(resolve, 100));
-            // Start typing after 500ms
-            setTimeout(type, 500);
-        } catch (error) {
-            // Fallback if font loading fails
-            console.warn('Font loading failed, starting typewriter anyway');
-            setTimeout(type, 800);
-        }
+            await document.fonts.load('400 1em "JetBrains Mono"');
+        } catch (e) {}
+        await pause(600);
+        run();
     }
 
-    // Check if Font Loading API is available
     if (document.fonts && document.fonts.load) {
-        startTypewriter();
+        start();
     } else {
-        // Fallback: wait longer for font to load
-        setTimeout(type, 1000);
+        setTimeout(run, 1000);
     }
 });
