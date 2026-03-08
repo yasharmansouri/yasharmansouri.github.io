@@ -39,16 +39,22 @@
     <meta name="twitter:description" content="Data Engineer / Tech Consultant helping organizations make better use of their data">
     <meta name="twitter:image" content="https://yasharmansouri.github.io/assets/images/og-image.jpg">
 
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/styles/themes.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/glassmorphism.css">
-    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+
 </head>
 
 <body>
@@ -130,7 +136,7 @@
             <h1 class="post-title">Apple Silicon Comparison</h1>
 
             <!-- Post Metadata: date and tags on same line -->
-            <div class="post-meta" style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div class="post-meta post-meta-inline">
                 <time datetime="2026-02-27" class="post-date">
                     February 27, 2026
                 </time>
@@ -141,7 +147,7 @@
                 </div>
             </div>
 
-            <p class="post-description" style="color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.6;">
+            <p class="post-description">
                 Interactive comparison of Apple Silicon chips from M1 through M5, with benchmarks, specs, and generation-over-generation analysis.
             </p>
         </header>
@@ -189,8 +195,8 @@
 
     <!-- Scripts -->
     <script src="/scripts/theme-toggle.js"></script>
-    <script src="/scripts/navigation.js"></script>
-    <script src="/scripts/typewriter.js"></script>
+    <script src="/scripts/navigation.js" defer></script>
+
 </body>
 
 </html>

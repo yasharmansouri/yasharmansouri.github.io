@@ -39,16 +39,22 @@
     <meta name="twitter:description" content="Data Engineer / Tech Consultant helping organizations make better use of their data">
     <meta name="twitter:image" content="https://yasharmansouri.github.io/assets/images/og-image.jpg">
 
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/styles/themes.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/glassmorphism.css">
-    <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+
 </head>
 
 <body>
@@ -225,8 +231,8 @@ or just to connect.
 
     <!-- Scripts -->
     <script src="/scripts/theme-toggle.js"></script>
-    <script src="/scripts/navigation.js"></script>
-    <script src="/scripts/typewriter.js"></script>
+    <script src="/scripts/navigation.js" defer></script>
+
 </body>
 
 </html>
